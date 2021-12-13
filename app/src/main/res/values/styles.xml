@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <style name="textInputLayout">
+      <item name="paddingStart" >10dp</item>
+        <item name="background">@drawable/et_bacground_color</item>
+
+    </style>
+
+    <style name="buttonDesign">
+        <item name="background">@drawable/btn_bacground_color</item>
+    </style>
+
+    <style name="TextInputLayoutCustom" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="errorIconDrawable">@null</item>
+        <item name="boxStrokeColor">#ff9800</item>
+        <item name="android:hint">""</item>
+    </style>
+</resources>

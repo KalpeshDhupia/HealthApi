@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">HealthApi</string>
+    <string name="username">Username<font color='#FF0000'>*</font></string>
+</resources>
