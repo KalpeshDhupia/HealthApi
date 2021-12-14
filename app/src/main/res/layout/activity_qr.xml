@@ -25,21 +25,19 @@
         android:layout_height="64dp"
         android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+        app:srcCompat="@drawable/layer_1" />
 
     <TextView
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_semibold"
         android:text="Name"
         android:textSize="15sp"
-        android:fontFamily="@font/poppins_semibold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
@@ -48,8 +46,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Gender"
         android:fontFamily="@font/poppins_light"
+        android:text="Gender"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,10 +60,9 @@
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/tvHealthId"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAge"
-        app:srcCompat="@drawable/qr" />
+        app:srcCompat="@drawable/ic_launcher_background" />
 
     <TextView
         android:id="@+id/tvHealthId"
@@ -92,47 +89,58 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="13dp"
         android:layout_marginBottom="40dp"
         android:backgroundTint="@color/white"
+        android:elevation="0dp"
         android:fontFamily="@font/poppins_semibold"
-        android:padding="5dp"
+        android:paddingLeft="31dp"
+        android:paddingTop="11dp"
+        android:paddingRight="31dp"
+        android:paddingBottom="11dp"
+        android:stateListAnimator="@null"
         android:text="View Health ID"
         android:textAllCaps="false"
         android:textColor="@color/black"
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnDownload"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp" />
 
     <Button
         android:id="@+id/btnDownload"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginBottom="40dp"
         android:backgroundTint="#30A3F1"
+        android:elevation="0dp"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Download HealthID"
+        android:maxLines="1"
+        android:paddingLeft="14dp"
+        android:paddingTop="11dp"
+        android:paddingRight="14dp"
+        android:paddingBottom="11dp"
+        android:stateListAnimator="@null"
+        android:text="Download Health ID"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/btnView" />
 
 

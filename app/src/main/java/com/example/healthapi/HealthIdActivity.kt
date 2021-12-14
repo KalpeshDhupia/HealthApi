@@ -3,6 +3,7 @@ package com.example.healthapi
 import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.healthapi.model.Healthid
@@ -35,14 +36,43 @@ class HealthIdActivity : AppCompatActivity() {
             val address = etAddress.text.toString()
             val email = etemail.text.toString()
 
+            if (userName.isEmpty()) {
+                tilUsername.error = "Username cannot empty"
+
+            }
+            if (password.isEmpty()) {
+                tilPassword.error = "Password cannot empty"
+
+            }
+
+            if (firstName.isEmpty()) {
+                tilFirstName.error = "Firstname cannot empty"
+
+            }
+            if (lastName.isEmpty()) {
+                tilLastName.error = "Lastname cannot empty"
+
+            }
+
+
+            if (gender.isEmpty()) {
+                tilGender.error = "Gender cannot empty"
+
+            }
+            if (email.isEmpty()){
+                tilEmail.error = "Email cannot empty"
+            }
+
+
+
             fun isDataValid(): Boolean {
                 var isValid = true
                 if (userName.isEmpty()) {
-                    tilUsername.setError("Username cannot empty")
+                    tilUsername.error = "Username cannot empty"
                     isValid = false
                 }
                 if (userName.length <= 3 || userName.length >= 33) {
-                    tilUsername.setError("Username is not valid")
+                    tilUsername.error = "Username is not valid"
                     isValid = false
                 }
                 if (!isEmailAddressValid(email)) {
@@ -51,7 +81,7 @@ class HealthIdActivity : AppCompatActivity() {
                 if (gender == "male" || gender == "female" || gender == "transgender" || gender == "m" || gender == "f" || gender == "tg" || gender == "M" || gender == "F" || gender == "TG" || gender == "Male" || gender == "Female" || gender == "Transgender") {
 
                 } else {
-                    tilGender.setError("Enter Valid Gender")
+                    tilGender.error = "Enter Valid Gender"
                     isValid = false
                 }
 
@@ -61,7 +91,7 @@ class HealthIdActivity : AppCompatActivity() {
 
 
 
-            if (firstName.isNotEmpty() && lastName.isNotEmpty() && gender.isNotEmpty() && address.isNotEmpty() && isDataValid() && password.isNotEmpty()) {
+            if (firstName.isNotEmpty() && lastName.isNotEmpty() && gender.isNotEmpty() && isDataValid() && password.isNotEmpty()) {
                 if (transactionId != null) {
                     createHealthId(
                         userName,
@@ -80,11 +110,17 @@ class HealthIdActivity : AppCompatActivity() {
         }
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home)
+            finish()
+        return super.onOptionsItemSelected(item)
+    }
+
     fun isEmailAddressValid(email: String): Boolean {
         if (Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             return true
         }
-        tilEmail.setError("Invalid Email Address")
+        tilEmail.error = "Invalid Email Address"
         return false
     }
 

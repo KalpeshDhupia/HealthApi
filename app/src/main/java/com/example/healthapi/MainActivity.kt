@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
                 if (editTextPhone.text!!.length == 10) {
                     addMobileNo(editTextPhone.text.toString())
                 } else {
-                    tilEditTextPhone.setError("Enter Valid Number")
+                    tilEditTextPhone.error = "Enter Valid Number"
                 }
             } else {
                 Toast.makeText(this, "Enter number", Toast.LENGTH_SHORT).show()
